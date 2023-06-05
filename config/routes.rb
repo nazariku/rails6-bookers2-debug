@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
     resources :book_comments, only: [:create, :destroy]
   end
+  post '/like', to: 'likes#create', as: 'like'
+  delete '/like', to: 'likes#destroy', as: 'unlike'
 end
